@@ -1,0 +1,90 @@
+﻿"ALL Big Fillet"= 10.0mm
+"ALL Medium Fillet"= 1.0mm
+"ALL Small Fillet"= 0.5mm
+
+"BODY Rad"= 82.5mm
+"BODY End Cut Rad"= 72.5mm
+"BODY Height Ext"= 27.5mm
+"BODY Bottom Cut Dist"= 50.0mm
+"BODY Seal Thickness"= 3.75mm
+"BODY Wall Extra Thickness"= 2.5mm
+"BODY Bottom Extra Nut Wall"= 7.5mm
+
+"ARM Both Dia"= 39.75mm
+"ARM Both Length"= 67.5mm
+"ARM Both Wire Hole Dia"= 15.0mm
+"ARM Both Prop Seal Thickness"= 2.5mm
+"ARM Both Brass Insert Dia"= 4.875mm
+"ARM Both Bolt Cut Depth"= 12.5mm
+
+"ARM Both Nema Bolt Off"= 15.4mm
+"ARM Both Nema Bolt Depth"= 2.5mm
+"ARM Both Nema Width"= 20.0mm
+"ARM Both Nema Wall Off"= 2.5mm
+"ARM Both Nema Center Dia 1"= 17.0mm
+"ARM Both Nema Center Dia 2"= 10.0mm
+"ARM Both Nema Bearing OD"= 16.0mm
+"ARM Both Nema Bearing ID"= 10.0mm
+"ARM Both Nema Bearing Thickness"= 4.0mm
+"ARM Both Nema Height"= 38.0mm
+"ARM Both Nema Shaft Dia"= 4.0mm
+"ARM Both Nema Shaft Length"= 10.0mm
+"ARM Both Nema Center Height"= 1.5mm
+
+"ARM Rotating Bearing OD"= 68.0mm
+"ARM Rotating Bearing ID"= 40.0mm
+"ARM Rotating Bearing Thickness"= 15.0mm
+
+"ARM Static Mount Dia"= 65.0mm
+"ARM Static Bolt Off"= 1.125mm
+
+"ALL Bolt Hole Off"= 0.25mm
+"ALL Vert Bolt Hole Off Scalar"= 0.5mm
+"ALL Horz Bolt Hole Off Scalar"= 1.25mm
+
+"ALL Nut Size Off"= 0.25mm
+"ALL Vert Nut Off Scalar"= 0.5mm
+"ALL Horz Nut Off Scalar"= 1.25mm
+
+"BODY Bolt Count"= 12
+"BODY Bolt Size"= 6
+"BODY Bolt Length"= 22.0mm
+"BODY Bolt Head Dia"= IIF ( "BODY Bolt Size" = 3 , 5.75mm , IIF ( "BODY Bolt Size" = 4 , 7.25mm , IIF ( "BODY Bolt Size" = 5 , 8.75mm , IIF ( "BODY Bolt Size" = 6 , 10.25mm , 5.75mm ) ) ) )
+"BODY Bolt Head Height"= IIF ( "BODY Bolt Size" = 3 , 3.0mm , IIF ( "BODY Bolt Size" = 4 , 4.0mm , IIF ( "BODY Bolt Size" = 5 , 5.0mm , IIF ( "BODY Bolt Size" = 6 , 6.0mm , 3.0mm ) ) ) )
+"BODY Nut Width"= IIF ( "BODY Bolt Size" = 3 , 5.5mm , IIF ( "BODY Bolt Size" = 4 , 7.0mm , IIF ( "BODY Bolt Size" = 5 , 8.0mm , IIF ( "BODY Bolt Size" = 6 , 10.0mm , 5.5mm ) ) ) )
+"BODY Nut Height"= IIF ( "BODY Bolt Size" = 3 , 4.0mm , IIF ( "BODY Bolt Size" = 4 , 5.0mm , IIF ( "BODY Bolt Size" = 5 , 5.0mm , IIF ( "BODY Bolt Size" = 6 , 6.0mm , 4.0mm ) ) ) )
+
+"ARM Static Bolt Count"= 8
+"ARM Static Bolt Size"= 5
+"ARM Static Bolt Length"= 20.0mm
+"ARM Static Bolt Head Dia"= IIF ( "ARM Static Bolt Size" = 3 , 5.75mm , IIF ( "ARM Static Bolt Size" = 4 , 7.25mm , IIF ( "ARM Static Bolt Size" = 5 , 8.75mm , IIF ( "ARM Static Bolt Size" = 6 , 10.25mm , 5.75mm ) ) ) )
+"ARM Static Bolt Head Height"= IIF ( "ARM Static Bolt Size" = 3 , 3.0mm , IIF ( "ARM Static Bolt Size" = 4 , 4.0mm , IIF ( "ARM Static Bolt Size" = 5 , 5.0mm , IIF ( "ARM Static Bolt Size" = 6 , 6.0mm , 3.0mm ) ) ) )
+"ARM Static Nut Width"= IIF ( "ARM Static Bolt Size" = 3 , 5.5mm , IIF ( "ARM Static Bolt Size" = 4 , 7.0mm , IIF ( "ARM Static Bolt Size" = 5 , 8.0mm , IIF ( "ARM Static Bolt Size" = 6 , 10.0mm , 5.5mm ) ) ) )
+"ARM Static Nut Height"= IIF ( "ARM Static Bolt Size" = 3 , 4.0mm , IIF ( "ARM Static Bolt Size" = 4 , 5.0mm , IIF ( "ARM Static Bolt Size" = 5 , 5.0mm , IIF ( "ARM Static Bolt Size" = 6 , 6.0mm , 4.0mm ) ) ) )
+
+"GEAR Arc Length"= 1.5mm
+"GEAR Depth Adj"= ( 4 / 4 ) * 1.0mm
+"GEAR Helix Angle"= 66.66deg
+"GEAR Thickness"= 10.0mm
+"GEAR Tooth Off"= 0.125mm
+"GEAR Nema Teeth"= 14
+"GEAR Arm Teeth"= 42
+
+"ARM Gear Width Off"= 2.5mm
+"ARM Gear Bolt Count"= 4
+"ARM Gear Rotation"= 360.0deg
+"ARM Gear Bolt Size"= 3
+"ARM Gear Bolt Length"= 20.0mm
+"ARM Gear Bolt Head Dia"= IIF ( "ARM Static Bolt Size" = 3 , 5.75mm , IIF ( "ARM Static Bolt Size" = 4 , 7.25mm , IIF ( "ARM Static Bolt Size" = 5 , 8.75mm , IIF ( "ARM Static Bolt Size" = 6 , 10.25mm , 5.75mm ) ) ) )
+"ARM Gear Bolt Head Height"= IIF ( "ARM Static Bolt Size" = 3 , 3.0mm , IIF ( "ARM Static Bolt Size" = 4 , 4.0mm , IIF ( "ARM Static Bolt Size" = 5 , 5.0mm , IIF ( "ARM Static Bolt Size" = 6 , 6.0mm , 3.0mm ) ) ) )
+"ARM Gear Nut Width"= IIF ( "ARM Static Bolt Size" = 3 , 5.5mm , IIF ( "ARM Static Bolt Size" = 4 , 7.0mm , IIF ( "ARM Static Bolt Size" = 5 , 8.0mm , IIF ( "ARM Static Bolt Size" = 6 , 10.0mm , 5.5mm ) ) ) )
+"ARM Gear Nut Height"= IIF ( "ARM Static Bolt Size" = 3 , 4.0mm , IIF ( "ARM Static Bolt Size" = 4 , 5.0mm , IIF ( "ARM Static Bolt Size" = 5 , 5.0mm , IIF ( "ARM Static Bolt Size" = 6 , 6.0mm , 4.0mm ) ) ) )
+
+"ARM Both Prop Plate Bolt Size"= 3
+"ARM Both Prop Plate Bolt Length"= 16.0mm
+"ARM Both Prop Plate Bolt Head Dia"= IIF ( "ARM Both Prop Plate Bolt Size" = 3 , 5.75mm , IIF ( "ARM Both Prop Plate Bolt Size" = 4 , 7.25mm , IIF ( "ARM Both Prop Plate Bolt Size" = 5 , 8.75mm , IIF ( "ARM Both Prop Plate Bolt Size" = 6 , 10.25mm , 5.75mm ) ) ) )
+"ARM Both Prop Plate Bolt Head Height"= IIF ( "ARM Both Prop Plate Bolt Size" = 3 , 3.0mm , IIF ( "ARM Both Prop Plate Bolt Size" = 4 , 4.0mm , IIF ( "ARM Both Prop Plate Bolt Size" = 5 , 5.0mm , IIF ( "ARM Both Prop Plate Bolt Size" = 6 , 6.0mm , 3.0mm ) ) ) )
+
+"ARM Both Nema Bolt Size"= 2
+"ARM Both Nema Bolt Head Dia"= IIF ( "ARM Both Nema Bolt Size" = 3 , 5.75mm , IIF ( "ARM Both Nema Bolt Size" = 4 , 7.25mm , IIF ( "ARM Both Nema Bolt Size" = 5 , 8.75mm , IIF ( "ARM Both Nema Bolt Size" = 6 , 10.25mm , 5.75mm ) ) ) )
+"ARM Both Nema Bolt Head Height"= IIF ( "ARM Both Nema Bolt Size" = 3 , 3.0mm , IIF ( "ARM Both Nema Bolt Size" = 4 , 4.0mm , IIF ( "ARM Both Nema Bolt Size" = 5 , 5.0mm , IIF ( "ARM Both Nema Bolt Size" = 6 , 6.0mm , 3.0mm ) ) ) )
