@@ -1,0 +1,134 @@
+GENERAL DOCUMENTATION {
+	-- Communication is entirely string command based
+	-- 'A#' type drivers use absolute coordinates only
+	-- 'B#' type drivers use relative coordinates only
+	-- The # proceeding 'A' or 'B' is for a sequential
+			number identification for the amount of 'X#'
+			type drivers.
+}
+
+CURRENT CONFIGURATION {
+	-- 'A0' {
+		-- axis that controls the rotation of the rotating arms
+		-- uses the Z motor driver on the controller board }
+	-- 'B0' {
+		-- axis that controls the static mounted arm propellers
+		-- uses the X motor driver on the controller board }
+	-- 'B1' {
+		-- axis that controls the rotating arm propellers
+		-- uses the Y motor driver on the controller board }
+}
+
+INPUT COMMANDS {
+	-- I1 A#:a:b:c:z B#:d:e:z {
+		-- EXAMPLES {
+			-- I1 A0:-30:100:1FBB B0:360:500:1:F9Z2 {
+				-- 'A0' {
+					-- moves to the '-30'deg location @'100'RPM
+					-- movement command identifier is '1FBB' }    
+				-- 'B0' {
+					-- moves '360'deg forward from where it is @'500'RPM
+					-- movement command identifier is 'F9Z2' } }
+			-- I1 A0:0:-1:1098 B1:-1:200:1:EF01 {
+				-- 'A0' {
+					-- moves to the center location @the last set RPM
+					-- movement command identifier is '1098' } }
+                -- 'B1' {
+					-- continues to the last set target location @'200'RPM
+                    -- movement command identifier is 'EF01' }
+			-- I1 A0:10:0:391A B0:1:1:AF48 B1:-2:2000:-1:DF39 {
+				-- 'A0' {
+					-- Stops moving where it currently is
+					-- Movement command identifier is '391A' }
+                -- 'B0' {
+					-- Stops moving where it currently is
+					-- Movement command identifier is 'AF48' }
+                -- 'B1' {
+					-- Moves backwards infinitely @'2000'RPM
+					-- Movement command identifier is 'DF39' } } }
+
+		-- NOTES {
+			-- If 'A#' is referenced then 'd', 'e', & 'z' must be included
+			-- If 'B#' is referenced then 'a', b', 'c', & 'z' must be included
+			-- All drivers do not need to be included in every command,
+					only drivers where the movement needs to be changed,
+					should be referenced }
+    
+		-- VARIABLES {
+			-- 'a' {
+				-- 'a' only applies to 'B' type motors
+				-- 'a' represents degree of rotation in relative coordinates
+				-- 'a' is a float
+				-- ( ( 'a' > 0 ) || ( 'a' == 0 ) || ( 'a' == -1 ) || ( 'a' == -2 ) ) {
+					-- if ( 'a' == -2 ) {
+						-- then the target location is infinite }
+					-- if ( 'a' == -1 ) {
+						-- then the target rotation point is unchanged }
+					-- if ( 'a' == 0 ) {
+						-- then the motor stops where it currently is }
+					-- if ( 'a' > 0 ) {
+						-- then motor location zeroes and moves to 'a' }
+					-- if ('c' == -1 || 'c' == 1) {
+						-- then 'a' cannot equal -1 } } }
+						
+			-- 'b' {
+				-- 'b' only applies to 'B' type motors
+				-- 'b' represents RPM
+				-- 'b' is an integer
+				-- ( ( 'b' > 0 ) || ( 'b' == 0 ) || ( 'b' == -1 ) ) {
+					-- if ( 'b' == -1 ) {
+						-- then the current speed of the motor is unchanged }
+					-- if ( 'b' == 0 ) {
+						-- then the motor stops where it currently is }
+					-- if ( 'b' > 0 ) {
+						-- then motor changes to the new RPM given as 'b' } } }
+						
+			-- 'c' {
+				-- 'c' only applies to 'B' type motors
+				-- 'c' represents direction of rotation
+				-- 'c' is an integer
+				-- ( ( 'c' == 1 ) || ( 'c' == -1 ) || ( 'c' == -2 ) || ( 'c' == 0 ) ) {
+					-- if ( 'c' == 1 ) {
+						-- then the motor moves forward }
+					-- if ( 'c' == -1 ) {
+						-- then the motor moves backwards }
+					-- if ( 'c' == 0 ) {
+						-- then the motor stops } }
+				-- if ('a' == -2) {
+					-- then 'c' is ignored } }
+					
+			-- 'd' {
+				-- 'd' only applies to 'A' type motors
+				-- 'd' represents degree of rotation in absolute coordinates
+				-- 'd' is a float
+				-- ( ( 180 < 'd' < 180 ) || ( 'd' == -1 ) ) {
+					-- if ( 'd' == -1 ) {
+						-- then the target rotation point is unchanged }
+					-- if ( 'd' < |+-180| ) {
+						-- then motor moves to the new target location 'd' } }
+				-- if ( 'e' == 0 ) {
+					-- then 'd' is ignored } }
+					
+			-- 'e' {
+				-- 'e' only applies to 'A' type motors
+				-- 'e' represents RPM
+				-- 'e' is an integer
+				-- ( ( 'e' > 0 ) || ( 'e' == 0 ) || ( 'e' == -1 ) ) {
+					-- if ( 'e' == -1 ) {
+						-- then the current speed of the motor is unchanged }
+					-- if ( 'e' == 0 ) {
+						-- then the motor stops where it currently is }
+					-- if ( 'e' > 0 ) {
+						-- then the motor changes to the new RPM given as 'e' } } }
+						
+			-- 'z' {
+				-- 'z' is a unique 4 digit hexadecimal identifier
+				-- this identifier is given for each movement command for each driver
+				-- the identifier is then sent back to indicate that the command for that
+						motor has finished its movement } } }
+
+}
+
+OUTPUT COMMANDS {
+
+}
